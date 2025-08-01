@@ -1,0 +1,68 @@
+#include <bits/stdc++.h>
+using namespace std;
+struct Pair{
+int x,y;
+};
+bool cmp(Pair a,Pair b){
+return a.x<b.x;
+}
+long long int  Ot(vector<Pair>u,vector<int>d,int c){
+int l=-1;
+int r=u.size();
+while(r-l>1){
+int m=(r+l)/2;
+if(c>=u[m].x){
+l=m;
+}
+else{
+r=m;
+}
+}
+long long int s=0;
+int i=0;
+if(r==u.size()){
+i=u.size();
+}
+else{
+i=u[r].y;
+}
+for(int f=0;i>f;f++){
+s=s+d[f];
+}
+return s;
+}
+int main(){
+int t;
+cin >> t;
+vector<int>Global(t);
+vector<long long int>go;
+for(int e=0;t>e;e++){
+int n,q;
+cin >> n>>q;
+Global[e]=q;
+vector<Pair>g(n);
+vector<int>gi(n);
+vector<int>Zap(q);
+for(int yp=0;n>yp;yp++){
+cin >> g[yp].x;
+g[yp].y=yp;
+gi[yp]=g[yp].x;
+}
+stable_sort(g.begin(),g.end(),cmp);
+for(int r=0;q>r;r++){
+cin >> Zap[r];
+}
+for(int v=0;q>v;v++){
+go.push_back(Ot(g,gi,Zap[v]));
+}
+}
+int cnt=0;
+for(int y=0;t>y;y++){
+for(int w=0;Global[y]>w;w++){
+cout << go[cnt]<<" ";
+cnt++;
+}
+cout << "" << endl;
+}
+return 0;
+}
