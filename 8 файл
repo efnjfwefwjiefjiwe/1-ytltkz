@@ -1,0 +1,24 @@
+//МКАД
+#include<iostream>
+using namespace std;
+#include<string>
+#include<vector>
+#include<algorithm>
+int main(){
+long long int n;
+cin >> n;
+cout << (n/3600)%24 <<":";
+if((n/60)%60<10){
+cout <<"0"<<(n/60)%60<<":";
+}
+else{
+cout <<(n/60)%60<<":";
+}
+if(n%60<10){
+cout <<"0"<< n%60;
+}
+else{
+cout << n%60;
+}
+return 0;
+}
