@@ -1,0 +1,12 @@
+//МКАД
+#include<iostream>
+using namespace std;
+#include<string>
+#include<vector>
+#include<algorithm>
+int main(){
+long long int n;
+cin >> n;
+cout <<((n-n%60)/60)%24<<" "<<n%60<< endl;
+return 0;
+}
