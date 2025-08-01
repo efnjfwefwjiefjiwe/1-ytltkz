@@ -1,0 +1,17 @@
+//МКАД
+#include<iostream>
+using namespace std;
+#include<string>
+#include<vector>
+#include<algorithm>
+int solve(int v,int t){
+return ((v*t)%109+109)%109;
+}
+int main(){
+long long int v;
+long long int t;
+cin >> v;
+cin >> t;
+cout << solve(v,t)<< endl;
+return 0;
+}
