@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-int Zapbin(int a,vector<long long int>f){
+int Zapbin(int a,vector<long long int>&f){
 int l=-1;
 int r=f.size();
 while(r-l>1){
